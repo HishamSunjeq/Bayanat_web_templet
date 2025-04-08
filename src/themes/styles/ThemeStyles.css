@@ -1,5 +1,6 @@
 /* Theme Variables */
 :root {
+  font-size: 120%;
   /* Light theme variables (default) */
   --bg-primary: #f0f2f5;
   --bg-secondary: #f8f9fa;

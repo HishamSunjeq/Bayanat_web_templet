@@ -17,6 +17,9 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
+      <div className="">
+        <h3>Bayanat</h3>
+      </div>
         <div className='logo'>        
          <img src={logo} alt="Company Logo" className="logo-image" />
         </div>

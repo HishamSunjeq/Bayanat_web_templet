@@ -102,9 +102,6 @@ function Sidebar() {
 
   return (
     <div className="sidebar">
-      <div className="sidebar-header">
-        <h3>Bayanat</h3>
-      </div>
       <div className="sidebar-menu">
         <ul>
           {menuItems.map((item) => (

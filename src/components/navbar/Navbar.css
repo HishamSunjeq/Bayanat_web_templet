@@ -13,8 +13,9 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
+ /*  max-width: 1400px; */
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 .navbar-welcome h2 {
@@ -26,7 +27,7 @@
 
 .user-name {
   color: var(--accent-color);
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 .navbar-actions {
