@@ -6,6 +6,7 @@ function ThemeToggle() {
   const { darkMode, toggleTheme } = useTheme();
 
   return (
+    <>
     <button 
       className="theme-toggle" 
       onClick={toggleTheme} 
@@ -13,6 +14,7 @@ function ThemeToggle() {
     >
       <i className={`bi ${darkMode ? "bi-sun-fill" : "bi-moon-fill"}`}></i>
     </button>
+    </>
   );
 }
 
