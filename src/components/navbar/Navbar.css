@@ -1,87 +1,53 @@
 .navbar {
   background-color: var(--bg-secondary);
   border-bottom: 1px solid var(--border-color);
-  padding: 1rem 2rem;
+  padding: 0.75rem 1rem; /* Reduced padding for small screens */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 100;
-  
 }
 
-.navbar-container {
+.navbar-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  gap: 0.5rem; /* Reduced gap for tighter layout */
 }
 
+.navbar-col {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Slightly reduced gap between items */
+}
+
+/* Left column */
 .navbar-left {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  flex: 1;
+  min-width: 0; /* Prevents overflow */
 }
 
+/* Right column */
 .navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+  flex: 1;
+  justify-content: flex-end;
 }
 
-.navbar-brand {
-  margin: 0;
-  font-size: 1.5rem;
-  color: var(--text-primary);
-}
-
+/* Sidebar toggle button */
 .sidebar-toggle {
-  display: none;
+  display: none; /* Hidden by default */
   background: none;
   border: none;
   font-size: 1.5rem;
   color: var(--text-primary);
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.25rem; /* Reduced padding */
+  margin-right: 0.5rem; /* Space between button and logo */
 }
 
-.navbar-welcome h2 {
-  margin: 0;
-  font-size: 1.25rem;
-  color: var(--text-primary);
-  font-weight: 500;
-}
-
-.user-name {
-  color: var(--accent-color);
-}
-
-.navbar-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.logout-btn {
-  background-color: var(--accent-color);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.logout-btn:hover {
-  background-color: var(--accent-hover);
-  transform: translateY(-2px);
-}
-
+/* Logo and title */
 .logo-image {
   height: 40px;
   width: auto;
@@ -96,31 +62,92 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width:  991.98px) {
-  .navbar {
-    padding: 0.75rem 1rem;
+.navbar-left h3 {
+  margin: 0;
+  font-size: 1.25rem; /* Slightly smaller for small screens */
+  color: var(--text-primary);
+}
+
+/* Right side styles */
+.navbar-welcome h2 {
+  margin: 0;
+  font-size: 1.1rem; /* Adjusted for small screens */
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.user-name {
+  color: var(--accent-color);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logout-btn {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logout-btn:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* Media query for small screens */
+@media (max-width: 991.98px) {
+  .navbar-row {
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
   }
-  
-  .navbar-container {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  
+
   .navbar-left {
-    flex: 1;
+    flex: 0 1 auto;
+    min-width: unset;
   }
-  
+
+  .navbar-right {
+    flex: 0 1 auto;
+  }
+
   .sidebar-toggle {
     display: block;
   }
-  
-  .navbar-right {
-    flex: 1;
-    justify-content: flex-end;
-    gap: 1rem;
+
+  .navbar-left {
+    gap: 0.5rem;
   }
-  
-  .navbar-welcome h2 {
+
+  .logo-image {
+    height: 32px;
+  }
+
+  .navbar-left h3 {
     font-size: 1.1rem;
+  }
+
+  .navbar-welcome h2 {
+    font-size: 1rem;
+  }
+
+  .navbar-actions {
+    gap: 0.5rem;
+  }
+
+  .logout-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
   }
 }

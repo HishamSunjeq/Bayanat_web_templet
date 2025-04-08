@@ -36,23 +36,34 @@ function App() {
             <Route path="/payment-creation/create-free-text" element={<div>Create Free Text Page</div>} />
             <Route path="/payment-creation/new-institution-transfer" element={<div>New Institution Transfer Page</div>} />
             <Route path="/payment-creation/single-credit-transfer" element={<div>Single Credit Transfer Page</div>} />
+
+            {/* Management */}
+            <Route path="/management" element={<div>Management Page</div>} />
             
-            {/* Analytics routes */}
-            <Route path="/analytics/performance" element={<div>Performance Analytics Page</div>} />
-            <Route path="/analytics/statistics" element={<div>Statistics Page</div>} />
-            <Route path="/analytics/trends" element={<div>Trends Page</div>} />
+            {/* Report */}
+            <Route path="/report/account-Report" element={<div>Account Report Page</div>} />
+            <Route path="/report/statement-information" element={<div>Account Report Page</div>} />
+
             
-            {/* Users routes */}
-            <Route path="/users/management" element={<div>User Management Page</div>} />
-            <Route path="/users/roles" element={<div>Roles & Permissions Page</div>} />
+            {/* Admin */}
+            <Route path="/admin/iban-page" element={<div>IBAN Page</div>} />
+            <Route path="/admin/validation-page" element={<div>Validation Page</div>} />
+            <Route path="/admin/roles" element={<div>Roles Page</div>} />
+            <Route path="/admin/roles-management" element={<div>Roles Management Page</div>} />
+            <Route path="/admin/user-role" element={<div>User Role Page</div>} />
+            <Route path="/admin/profile" element={<div>Profile Page</div>} />
+            <Route path="/admin/authorization-management" element={<div>Authorization Management Page</div>} />
+            <Route path="/admin/stages" element={<div>Stages Page</div>} />
+            <Route path="/admin/add-user" element={<div>Add User Page</div>} />
+            <Route path="/admin/add-new-bank" element={<div>Add new bank Page</div>} />
+            <Route path="/admin/add-new-transaction-type'" element={<div>Add new transaction type Page</div>} />
+            <Route path="/admin/batch-management" element={<div>Batch management Page</div>} />
+            <Route path="/admin/batches" element={<div>BatchesPage</div>} />
             
-            {/* Settings routes */}
-            <Route path="/settings/general" element={<div>General Settings Page</div>} />
-            <Route path="/settings/security" element={<div>Security Settings Page</div>} />
-            <Route path="/settings/notifications" element={<div>Notifications Settings Page</div>} />
+            {/* Configration */}
+            <Route path="/configration" element={<div>Configration Page</div>} />
             
-            {/* Reports */}
-            <Route path="/reports" element={<div>Reports Page</div>} />
+            
           </Route>
           
           <Route path="*" element={<Navigate to="/sign-in" replace />} />

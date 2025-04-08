@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import './Navbar.css';
@@ -16,8 +16,9 @@ function Navbar({ isSidebarOpen, toggleSidebar }) {
 
   return (
     <nav className="navbar">
-      <div className="navbar-container">
-        <div className="navbar-left">
+      <div className="navbar-row">
+        {/* Left Column */}
+        <div className="navbar-col navbar-left">
           <button className="sidebar-toggle" onClick={toggleSidebar}>
             <i className={`fas ${isSidebarOpen ? 'fa-times' : 'fa-bars'}`}></i>
           </button>
@@ -26,10 +27,13 @@ function Navbar({ isSidebarOpen, toggleSidebar }) {
           </div>
           <h3>Bayanat</h3>
         </div>
-        
-        <div className="navbar-right">
+
+        {/* Right Column */}
+        <div className="navbar-col navbar-right">
           <div className="navbar-welcome">
-            <h2>Welcome, <span className="user-name">{currentUser?.username || 'User'}</span></h2>
+            <h2>
+              Welcome, <span className="user-name">{currentUser?.username || 'User'}</span>
+            </h2>
           </div>
           <div className="navbar-actions">
             <button className="logout-btn" onClick={handleLogout}>

@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useTheme } from '../../themes/context/ThemeContext';
 import './Sidebar.css';
 
 function Sidebar({ isOpen, toggleSidebar }) {
   const location = useLocation();
-  const { darkMode } = useTheme();
   const [expandedMenus, setExpandedMenus] = useState(() => {
     const savedState = localStorage.getItem('sidebarExpandedMenus');
     return savedState ? JSON.parse(savedState) : {};
@@ -52,33 +50,43 @@ function Sidebar({ isOpen, toggleSidebar }) {
       ]
     },
     {
-      title: 'Analytics',
-      path: '/analytics',
+      title: 'Management',
+      path: '/management',
       icon: 'fas fa-chart-line',
-      submenu: [
-        { title: 'Performance', path: '/analytics/performance' },
-        { title: 'Statistics', path: '/analytics/statistics' },
-        { title: 'Trends', path: '/analytics/trends' }
-      ]
     },
     {
-      title: 'Users',
-      path: '/users',
+      title: 'Report',
+      path: '/report',
       icon: 'fas fa-users',
       submenu: [
-        { title: 'User Management', path: '/users/management' },
-        { title: 'Roles & Permissions', path: '/users/roles' }
+        { title: 'Account Report', path: '/report/account-Report' },
+        { title: 'Statement Information', path: '/report/statement-information' }
       ]
     },
     {
-      title: 'Settings',
-      path: '/settings',
+      title: 'Admin',
+      path: '/admin',
       icon: 'fas fa-cog',
       submenu: [
-        { title: 'General', path: '/settings/general' },
-        { title: 'Security', path: '/settings/security' },
-        { title: 'Notifications', path: '/settings/notifications' }
+        { title: 'IBAN page', path: '/admin/iban-page' },
+        { title: 'Validation page', path: '/admin/validation-page' },
+        { title: 'Roles', path: '/admin/roles' },
+        { title: 'Roles Management', path: '/admin/roles-management' },
+        { title: 'User Role', path: '/admin/user-role' },
+        { title: 'Profile', path: '/admin/profile' },
+        { title: 'Authorization Management', path: '/admin/authorization-management' },
+        { title: 'Stages', path: '/admin/stages' },
+        { title: 'Add User', path: '/admin/add-user' },
+        { title: 'Add new bank', path: '/admin/add-new-bank' },
+        { title: 'Add new transaction type', path: '/admin/add-new-transaction-type' },
+        { title: 'Batch management', path: '/admin/batch-management' },
+        { title: 'Batches', path: '/admin/batches' }
       ]
+    },
+    {
+      title: 'Configration',
+      path: '/configration',
+      icon: 'fas fa-cog',
     }
   ];
 
@@ -95,6 +103,12 @@ function Sidebar({ isOpen, toggleSidebar }) {
 
   const isSubmenuActive = (submenu) => {
     return submenu.some(item => location.pathname === item.path || location.pathname.startsWith(item.path + '/'));
+  };
+
+  const handleLinkClick = () => {
+    if (window.innerWidth < 991.98) {
+      toggleSidebar();
+    }
   };
 
   return (
@@ -124,7 +138,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
                           <Link 
                             to={subItem.path} 
                             className={isActive(subItem.path) ? 'active' : ''}
-                            onClick={toggleSidebar}
+                            onClick={handleLinkClick}
                           >
                             {subItem.title}
                           </Link>
@@ -137,7 +151,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
                 <Link 
                   to={item.path} 
                   className={`menu-item ${isActive(item.path) ? 'active' : ''}`}
-                  onClick={toggleSidebar}
+                  onClick={handleLinkClick}
                 >
                   <div className="menu-icon">
                     <i className={item.icon}></i>
