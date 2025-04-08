@@ -3,6 +3,7 @@ import './SignIn.css';
 import logo from '../../assets/Bayanat_logo.jpg';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import ThemeToggle from '../../themes/components/ThemeToggle';
 
 function SignIn() {
   const navigate = useNavigate();
@@ -162,12 +163,15 @@ function SignIn() {
         {/* Right Column - Sign In Form */}
         <div className="col-lg-6 d-flex align-items-center justify-content-center right-column p-4">
           <div className={`card p-4 p-md-5 shadow-lg ${loginSuccess ? 'login-success' : ''}`} style={{ width: '100%', maxWidth: '450px', borderRadius: '10px', border: 'none' }}>
+          <div className="theme-toggle-wrapper">
+              <ThemeToggle />
+            </div>
             <div className="text-center mb-4 d-block d-lg-none">
               <div className="logo-container-mobile mx-auto">
                 <img src={logo} alt="Company Logo" className="logo-image-mobile" />
               </div>
-              
             </div>
+            
             <h3 className="mb-4 text-center fw-bold text-light">Sign In</h3>
             
             {errors.general && (
