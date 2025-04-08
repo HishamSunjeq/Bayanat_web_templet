@@ -2,7 +2,7 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const ThemeContext = createContext();
 
-export const ThemeProvider = ({ children }) => {
+export function ThemeProvider({ children }) {
   const [darkMode, setDarkMode] = useState(() => {
     // Check if theme preference is saved in localStorage
     const savedTheme = localStorage.getItem('theme');
@@ -34,7 +34,9 @@ export const ThemeProvider = ({ children }) => {
       {children}
     </ThemeContext.Provider>
   );
-};
+}
 
 // Custom hook to use the theme context
-export const useTheme = () => useContext(ThemeContext);
+export function useTheme() { 
+  return useContext(ThemeContext); 
+}

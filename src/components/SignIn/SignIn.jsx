@@ -102,7 +102,6 @@ function SignIn() {
       if (formData.username === 'demo' && formData.password === 'demo12') {
         setLoginSuccess(true);
         
-        // Login the user with auth context
         login({ username: formData.username });
         
         setTimeout(() => {

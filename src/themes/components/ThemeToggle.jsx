@@ -2,7 +2,7 @@ import React from 'react';
 import { useTheme } from '../../themes/context/ThemeContext';
 import './ThemeToggle.css';
 
-const ThemeToggle = () => {
+function ThemeToggle() {
   const { darkMode, toggleTheme } = useTheme();
 
   return (
@@ -14,6 +14,6 @@ const ThemeToggle = () => {
       <i className={`bi ${darkMode ? "bi-sun-fill" : "bi-moon-fill"}`}></i>
     </button>
   );
-};
+}
 
 export default ThemeToggle;
