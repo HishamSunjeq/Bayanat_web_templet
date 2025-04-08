@@ -3,21 +3,18 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../../themes/context/ThemeContext';
 import './Sidebar.css';
 
-function Sidebar() {
+function Sidebar({ isOpen, toggleSidebar }) {
   const location = useLocation();
   const { darkMode } = useTheme();
   const [expandedMenus, setExpandedMenus] = useState(() => {
-    // Initialize from localStorage if available
     const savedState = localStorage.getItem('sidebarExpandedMenus');
     return savedState ? JSON.parse(savedState) : {};
   });
 
-  // Save expanded state to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('sidebarExpandedMenus', JSON.stringify(expandedMenus));
   }, [expandedMenus]);
 
-  // Auto-expand menus when a submenu item is active
   useEffect(() => {
     const newExpandedState = { ...expandedMenus };
     let stateChanged = false;
@@ -45,14 +42,14 @@ function Sidebar() {
       icon: 'fas fa-chart-bar',
       submenu: [
         { title: 'Multiple Transaction', path: '/payment-creation/multiple-transaction' },
-        { title: 'Direct debit', path: '/payment-creation/direct-debit' },
+        { title: 'Direct Debit', path: '/payment-creation/direct-debit' },
         { title: 'Upload Excel File', path: '/payment-creation/upload-excel' },
         { title: 'New Mandate', path: '/payment-creation/new-mandate' },
-        { title: 'Direct debit with mandate', path: '/payment-creation/direct-debit-with-mandate' },
+        { title: 'Direct Debit with Mandate', path: '/payment-creation/direct-debit-with-mandate' },
         { title: 'Create Free Text', path: '/payment-creation/create-free-text' },
-        { title: 'New institution transfer', path: '/payment-creation/new-institution-transfer' },
-        { title: 'Single credit transfer', path: '/payment-creation/single-credit-transfer' }
-    ]
+        { title: 'New Institution Transfer', path: '/payment-creation/new-institution-transfer' },
+        { title: 'Single Credit Transfer', path: '/payment-creation/single-credit-transfer' }
+      ]
     },
     {
       title: 'Analytics',
@@ -101,7 +98,7 @@ function Sidebar() {
   };
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
       <div className="sidebar-menu">
         <ul>
           {menuItems.map((item) => (
@@ -127,6 +124,7 @@ function Sidebar() {
                           <Link 
                             to={subItem.path} 
                             className={isActive(subItem.path) ? 'active' : ''}
+                            onClick={toggleSidebar}
                           >
                             {subItem.title}
                           </Link>
@@ -139,6 +137,7 @@ function Sidebar() {
                 <Link 
                   to={item.path} 
                   className={`menu-item ${isActive(item.path) ? 'active' : ''}`}
+                  onClick={toggleSidebar}
                 >
                   <div className="menu-icon">
                     <i className={item.icon}></i>
