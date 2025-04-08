@@ -5,9 +5,13 @@
 html, body, #root, .App {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   background-color: var(--bg-primary);
   font-size: 16px;
+}
+
+/* Sign-in specific styles to disable scrolling */
+.no-scroll {
+  overflow: hidden;
 }
 
 /* Sign-in container with theme-dependent background */

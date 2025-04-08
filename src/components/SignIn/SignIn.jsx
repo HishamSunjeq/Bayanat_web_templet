@@ -21,7 +21,7 @@ function SignIn() {
   // Redirect if already authenticated
   useEffect(() => {
     if (isAuthenticated) {
-      navigate('/home');
+      navigate('/dashbord');
     }
   }, [isAuthenticated, navigate]);
 
@@ -35,6 +35,16 @@ function SignIn() {
         container.classList.remove('fade-in');
       };
     }
+  }, []);
+
+  // Add no-scroll class to body when SignIn component mounts
+  useEffect(() => {
+    document.body.classList.add('no-scroll');
+    
+    // Cleanup function to remove the class when component unmounts
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
   }, []);
 
   const handleChange = (e) => {
@@ -105,7 +115,7 @@ function SignIn() {
         login({ username: formData.username });
         
         setTimeout(() => {
-          navigate('/home');
+          navigate('/dashbord');
         }, 1000);
       } else {
         setErrors({ general: 'Invalid username or password. Try using the demo account.' });
