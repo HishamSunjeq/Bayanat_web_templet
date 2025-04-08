@@ -156,7 +156,7 @@ function SignIn() {
               
               {/* Password with Icon and Show/Hide Toggle */}
               <div className={`input-group mb-3 ${errors.password ? 'has-error' : ''}`}>
-                <span className="input-group-text"><i className="bi bi-lock-fill"></i></span>
+                <span className="input-group-text"><i className="bi bi-lock-fill" style={{ color: '#cc0000' }}></i></span>
                 <input
                   type={showPassword ? "text" : "password"}
                   className={`form-control form-control-lg ${errors.password ? 'is-invalid' : ''}`}
@@ -175,7 +175,7 @@ function SignIn() {
                   aria-label={showPassword ? "Hide password" : "Show password"}
                   disabled={loading}
                 >
-                  <i className={`bi ${showPassword ? "bi-eye-slash-fill" : "bi-eye-fill"}`}></i>
+                  <i className={`bi ${showPassword ? "bi-eye-slash-fill" : "bi-eye-fill"}`} style={{ color: '#cc0000' }}></i>
                 </button>
               </div>
               {errors.password && <div className="text-danger mb-3 animate-error">{errors.password}</div>}
