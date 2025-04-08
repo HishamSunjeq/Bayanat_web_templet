@@ -8,7 +8,8 @@ This document provides a comprehensive guide to the theme system implemented in 
 2. [How to Use Theme Variables](#how-to-use-theme-variables)
 3. [Customizing Themes](#customizing-themes)
 4. [Theme Toggle Component](#theme-toggle-component)
-5. [Theme Context API](#theme-context-api)
+5. [Global Scrollbar Styling](#global-scrollbar-styling)
+6. [Theme Context API](#theme-context-api)
 
 ## Theme Variables
 
@@ -109,6 +110,59 @@ You can customize the appearance of the toggle button by editing `src/components
   /* Other properties... */
 }
 ```
+
+### Responsive Behavior
+
+The theme toggle button is responsive and adapts to different screen sizes. On small screens (max-width: 767px), the button is slightly smaller and positioned to ensure it doesn't interfere with the scrollbar:
+
+```css
+@media (max-width: 767px) {
+  .theme-toggle {
+    top: 10px;
+    right: 16px;    /* Adjusted to account for scrollbar width */
+    width: 36px;
+    height: 36px;
+  }
+}
+```
+
+## Global Scrollbar Styling
+
+The application includes global scrollbar styling that adapts to the current theme. The scrollbar uses the accent color for the thumb and the primary background color for the track.
+
+### Scrollbar Customization
+
+The scrollbar styling is defined in `src/styles/ThemeStyles.css`. It includes styles for both WebKit browsers (Chrome, Safari, Edge) and Firefox:
+
+```css
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 4px;
+}
+
+/* For Firefox (only applied in browsers that support it) */
+@supports (scrollbar-width: thin) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) var(--bg-primary);
+  }
+}
+```
+
+### Browser Compatibility
+
+- The WebKit scrollbar styling works in Chrome, Safari, and Edge.
+- The Firefox scrollbar styling works in Firefox and newer versions of Chrome (121+).
+- For browsers that don't support custom scrollbar styling, the default browser scrollbar will be displayed.
 
 ## Theme Context API
 

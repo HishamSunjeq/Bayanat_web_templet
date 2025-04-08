@@ -10,6 +10,12 @@ html, body, #root, .App {
   font-size: 16px;
 }
 
+/* Sign-in container with theme-dependent background */
+.sign-in-container {
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
+}
+
 /* Small screen styles */
 @media (max-width: 767px) {
   .sign-in-container {
@@ -26,7 +32,6 @@ html, body, #root, .App {
 
   .row {
     overflow-y: auto;
-    overscroll-behavior-y: contain;
     position: relative;
     transform: translateZ(0);
   }
@@ -260,8 +265,12 @@ html, body, #root, .App {
 /* Style input groups for icons */
 .input-group-text {
   background-color: var(--input-group-bg) !important;
-  border: 43px solid var(--input-border);
+  border: 1px solid var(--input-border);
   color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.75rem;
 }
 
 .input-group-text i {
@@ -405,7 +414,7 @@ input[type="password"] {
 }
 
 .logo-image {
-  max-width: 100%;
+  max-width: 90%;
   max-height: 100%;
   object-fit: contain;
 }

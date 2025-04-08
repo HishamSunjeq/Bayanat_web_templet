@@ -124,7 +124,7 @@ function SignIn() {
           <div className={`card p-4 p-md-5 shadow-lg ${loginSuccess ? 'login-success' : ''}`} style={{ width: '100%', maxWidth: '450px', borderRadius: '10px', border: 'none' }}>
             <div className="text-center mb-4 d-block d-lg-none">
               <div className="logo-container-mobile mx-auto">
-                <img src={logo} alt="Company Logo" className="img-fluid" style={{ maxWidth: '150px' }} />
+                <img src={logo} alt="Company Logo" className="logo-image-mobile" />
               </div>
               
             </div>
