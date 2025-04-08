@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import '../../styles/ThemeStyles.css';
 
 /* Global styles to ensure full viewport coverage */
 html, body, #root, .App {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #f0f2f5;
+  background-color: var(--bg-primary);
   font-size: 16px;
 }
 
@@ -168,9 +169,9 @@ html, body, #root, .App {
   z-index: 1;
 }
 
-/* Right Column - Light Side */
+/* Right Column - Theme Side */
 .right-column {
-  background-color: #f0f2f5;
+  background-color: var(--bg-primary);
   position: relative;
   overflow: hidden;
   margin-left: 0;
@@ -178,17 +179,17 @@ html, body, #root, .App {
   clip-path: none;
 }
 
-/* Remove pattern extension from red to white side */
+/* Remove pattern extension from red to theme side */
 .right-column::before {
   display: none;
 }
 
-/* Card styling for light theme */
+/* Card styling for theme */
 .right-column .card {
-  background-color: #f8f9fa;
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1) !important;
+  background-color: var(--card-bg);
+  box-shadow: 0 0.25rem 0.75rem var(--card-shadow) !important;
   transition: all 0.5s ease-in-out;
-  border: 1px solid #e6e6e6;
+  border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
 }
@@ -258,45 +259,45 @@ html, body, #root, .App {
 
 /* Style input groups for icons */
 .input-group-text {
-  background-color: #f5f5f5 !important;
-  border: 43px solid #e6e6e6;
-  color: rgba(0, 0, 0, 0.6);
+  background-color: var(--input-group-bg) !important;
+  border: 43px solid var(--input-border);
+  color: var(--text-secondary);
 }
 
 .input-group-text i {
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--text-secondary);
 }
 
 .input-group .form-control {
-  background-color: #ffffff;
-  color: #212529;
-  border: 1px solid #e6e6e6;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--input-border);
 }
 
 .input-group .form-control::placeholder {
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--input-placeholder);
 }
 
 .input-group .form-control:focus,
 .input-group .form-control:focus + .input-group-text {
-  background-color: #ffffff;
-  border-color: rgba(204, 0, 0, 0.5);
-  box-shadow: 0 0 0 0.2rem rgba(204, 0, 0, 0.15);
+  background-color: var(--input-bg);
+  border-color: var(--accent-shadow);
+  box-shadow: 0 0 0 0.2rem var(--accent-shadow);
 }
 
 /* Improve focus styles for input fields */
 .form-control:focus {
-  border-color: rgba(204, 0, 0, 0.5);
-  box-shadow: 0 0 0 0.2rem rgba(204, 0, 0, 0.15);
-  background-color: #ffffff;
-  color: #212529;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem var(--accent-shadow);
+  background-color: var(--input-bg);
+  color: var(--input-text);
 }
 
 /* Refine input group focus styles for a more subtle and elegant look */
 .input-group:focus-within .input-group-text,
 .input-group:focus-within .form-control {
-  border-color: rgba(204, 0, 0, 0.5);
-  box-shadow: 0 0 5px rgba(204, 0, 0, 0.25);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px var(--accent-shadow);
 }
 
 .input-group:focus-within .form-control {
@@ -329,27 +330,28 @@ input[type="password"]::-webkit-textfield-decoration-container {
 /* Additional Firefox specific rule */
 input[type="password"] {
   -moz-appearance: none !important;
+  appearance: none !important;
 }
 
 /* Password toggle button styling */
 .password-toggle {
   cursor: pointer;
-  background-color: #f0f0f0;
-  border: 1px solid #e0e0e0;
+  background-color: var(--input-group-bg);
+  border: 1px solid var(--input-border);
   border-left: none;
-  color: #ff3333;
+  color: var(--accent-color);
   transition: all 0.2s ease;
 }
 
 .password-toggle:focus {
   outline: none;
   box-shadow: none;
-  background-color: #f0f0f0;
-  border-color: rgba(204, 0, 0, 0.5);
+  background-color: var(--input-group-bg);
+  border-color: var(--accent-color);
 }
 
 .password-toggle:hover {
-  background-color: #e6e6e6;
+  background-color: var(--input-border);
 }
 
 .password-toggle i {
@@ -508,15 +510,42 @@ input[type="password"] {
   }
 }
 
-/* Text color fixes for light theme */
+/* Text color fixes for theme */
 .card h3.text-light {
-  color: #333333 !important;
+  color: var(--text-primary) !important;
 }
 
 .card p.text-white {
-  color: #555555 !important;
+  color: var(--text-secondary) !important;
 }
 
 .card .border-top {
-  border-top-color: #e0e0e0 !important;
+  border-top-color: var(--border-color) !important;
+}
+
+/* Fix for input text color in dark mode */
+.dark-theme input,
+.dark-theme input:focus,
+.dark-theme input:active,
+.dark-theme input::placeholder,
+.dark-theme .form-control,
+.dark-theme .form-control:focus,
+.dark-theme .form-control:active {
+  color: var(--input-text) !important;
+  -webkit-text-fill-color: var(--input-text);
+}
+
+/* Override browser autofill styles in dark mode */
+.dark-theme input:-webkit-autofill,
+.dark-theme input:-webkit-autofill:hover,
+.dark-theme input:-webkit-autofill:focus,
+.dark-theme input:-webkit-autofill:active,
+.dark-theme .form-control:-webkit-autofill,
+.dark-theme .form-control:-webkit-autofill:hover,
+.dark-theme .form-control:-webkit-autofill:focus,
+.dark-theme .form-control:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--input-text) !important;
+  -webkit-box-shadow: 0 0 0 30px var(--input-bg) inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: var(--input-text);
 }
