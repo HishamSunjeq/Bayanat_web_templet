@@ -6,6 +6,7 @@ import ThemeToggle from "./themes/components/ThemeToggle";
 import Dashbord from "./components/dashbord";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Structure from "./components/Structure/Structure";
 
 function App() {
   return (
@@ -19,7 +20,39 @@ function App() {
             path="/dashbord" 
             element={
               <ProtectedRoute>
-                <Dashbord />
+                <Structure>
+                  <Dashbord />
+                </Structure>
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/reports" 
+            element={
+              <ProtectedRoute>
+                <Structure>
+                  <div>Reports Page</div>
+                </Structure>
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/analytics" 
+            element={
+              <ProtectedRoute>
+                <Structure>
+                  <div>Analytics Page</div>
+                </Structure>
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/settings" 
+            element={
+              <ProtectedRoute>
+                <Structure>
+                  <div>Settings Page</div>
+                </Structure>
               </ProtectedRoute>
             } 
           />

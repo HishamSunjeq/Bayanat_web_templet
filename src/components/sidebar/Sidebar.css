@@ -1,0 +1,121 @@
+.sidebar {
+  width: 260px;
+  height: 100%;
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  transition: all 0.3s;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.sidebar-menu {
+  padding: 1rem 0;
+}
+
+.sidebar-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu > ul > li {
+  margin-bottom: 0.25rem;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark-theme .menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.menu-item.active {
+  background-color: rgba(204, 0, 0, 0.15);
+  color: #cc0000;
+  font-weight: 600;
+  border-left: 4px solid #cc0000;
+}
+
+.menu-item.active .menu-icon i {
+  color: #cc0000;
+}
+
+.menu-icon {
+  margin-right: 0.75rem;
+  width: 20px;
+  text-align: center;
+}
+
+.submenu-arrow {
+  margin-left: auto;
+  font-size: 0.8rem;
+}
+
+.submenu {
+  padding-left: 2.5rem !important;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.submenu li {
+  margin: 0.25rem 0;
+}
+
+.submenu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+.submenu a:hover {
+  color: var(--accent-color);
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.dark-theme .submenu a:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.submenu a.active {
+  color: #cc0000;
+  font-weight: 600;
+  background-color: rgba(204, 0, 0, 0.15);
+  border-left: 4px solid #cc0000;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 240px;
+  }
+}
