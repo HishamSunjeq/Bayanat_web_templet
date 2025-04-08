@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './SignIn.css';
 import logo from '../../assets/Bayanat_logo.jpg';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 function SignIn() {
+  const navigate = useNavigate();
+  const { login, isAuthenticated } = useAuth();
+  
   const [formData, setFormData] = useState({
     username: '',
     password: ''
@@ -13,13 +18,23 @@ function SignIn() {
   const [errors, setErrors] = useState({});
   const [loginSuccess, setLoginSuccess] = useState(false);
 
+  // Redirect if already authenticated
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/home');
+    }
+  }, [isAuthenticated, navigate]);
+
   // Add animation effect when component mounts
   useEffect(() => {
-    document.querySelector('.sign-in-container').classList.add('fade-in');
-    
-    return () => {
-      document.querySelector('.sign-in-container').classList.remove('fade-in');
-    };
+    const container = document.querySelector('.sign-in-container');
+    if (container) {
+      container.classList.add('fade-in');
+      
+      return () => {
+        container.classList.remove('fade-in');
+      };
+    }
   }, []);
 
   const handleChange = (e) => {
@@ -86,8 +101,12 @@ function SignIn() {
       
       if (formData.username === 'demo' && formData.password === 'demo12') {
         setLoginSuccess(true);
+        
+        // Login the user with auth context
+        login({ username: formData.username });
+        
         setTimeout(() => {
-          alert('Login successful! Redirecting to dashboard...');
+          navigate('/home');
         }, 1000);
       } else {
         setErrors({ general: 'Invalid username or password. Try using the demo account.' });
