@@ -1,13 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { useTheme } from '../../themes/context/ThemeContext';
 import './Navbar.css';
 
 function Navbar() {
   const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
-  const { darkMode } = useTheme();
 
   const handleLogout = () => {
     logout();
@@ -18,7 +16,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-welcome">
-          <h2>Welcome, <span className="user-name">{currentUser?.name || 'User'}</span></h2>
+          <h2>Welcome, <span className="user-name">{currentUser?.username || 'User'}</span></h2>
         </div>
         <div className="navbar-actions">
           <button className="logout-btn" onClick={handleLogout}>

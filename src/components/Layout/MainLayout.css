@@ -1,4 +1,4 @@
-.structure-container {
+.main-layout {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -7,13 +7,13 @@
   color: var(--text-primary);
 }
 
-.structure-content {
+.layout-content {
   display: flex;
   flex: 1;
   overflow: hidden;
 }
 
-.main-content {
+.page-content {
   flex: 1;
   padding: 1.5rem;
   overflow-y: auto;
@@ -21,9 +21,8 @@
   transition: all 0.3s ease;
 }
 
-/* Add responsive behavior */
 @media (max-width: 768px) {
-  .main-content {
+  .page-content {
     padding: 1rem;
   }
 }
