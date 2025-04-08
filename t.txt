@@ -1,0 +1,4 @@
+npm install bootstrap
+npm i --save bootstrap @popperjs/core
+npm install bootstrap-icons
+npm install react-router-dom

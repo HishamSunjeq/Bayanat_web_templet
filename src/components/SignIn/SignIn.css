@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Global styles to ensure full viewport coverage */
+html, body, #root, .App {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1e1e1e;
+  font-size: 16px;
+}
+
+/* Small screen styles */
+@media (max-width: 767px) {
+  .sign-in-container {
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .row {
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    position: relative;
+    transform: translateZ(0);
+  }
+
+  .left-column {
+    display: none !important;
+  }
+
+  .right-column {
+    clip-path: none !important;
+    padding: 1rem !important;
+    margin: 0 !important;
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1.5rem !important;
+    margin: 0 auto !important;
+  }
+
+  .card {
+    width: 100% !important;
+    max-width: 90vw !important;
+    margin: 0 auto !important;
+    padding: 1.5rem !important;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem !important;
+  }
+
+  input.form-control {
+    font-size: 16px !important;
+    padding: 0.75rem 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .logo-container {
+    margin: 1.5rem auto !important;
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .logo-image {
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: contain !important;
+  }
+
+  .sign-in-button {
+    width: 100% !important;
+    padding: 0.875rem !important;
+    font-size: 1rem !important;
+  }
+
+  .input-group-text {
+    padding: 0.75rem 1rem !important;
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Left Column - Red Side */
+.left-column {
+  background-color: #CC0000;
+  display: flex; 
+  flex-direction: column; 
+  text-align: center; 
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, #cc0000 0%, #990000 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  clip-path: polygon(
+    0 0, 
+    100% 0, 
+    98% 15%, 
+    100% 30%, 
+    96% 45%, 
+    99% 60%, 
+    95% 75%, 
+    97% 90%, 
+    92% 100%, 
+    0 100%
+  );
+  z-index: 1;
+}
+
+.left-column::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+  z-index: 0;
+  animation: pulse-bg 8s infinite alternate;
+}
+
+.left-column::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23ffffff' stroke-width='0.4' stroke-opacity='0.2' fill='none'%3E%3Ccircle cx='20' cy='20' r='1' fill='%23ffffff' fill-opacity='0.3'/%3E%3Ccircle cx='80' cy='40' r='1' fill='%23ffffff' fill-opacity='0.3'/%3E%3Ccircle cx='140' cy='10' r='1' fill='%23ffffff' fill-opacity='0.3'/%3E%3Ccircle cx='180' cy='60' r='1' fill='%23ffffff' fill-opacity='0.3'/%3E%3Ccircle cx='160' cy='140' r='1' fill='%23ffffff' fill-opacity='0.3'/%3E%3Ccircle cx='100' cy='100' r='1' fill='%23ffffff' fill-opacity='0.3'/%3E%3Ccircle cx='60' cy='160' r='1' fill='%23ffffff' fill-opacity='0.3'/%3E%3Ccircle cx='20' cy='100' r='1' fill='%23ffffff' fill-opacity='0.3'/%3E%3Ccircle cx='10' cy='190' r='1' fill='%23ffffff' fill-opacity='0.3'/%3E%3Ccircle cx='120' cy='190' r='1' fill='%23ffffff' fill-opacity='0.3'/%3E%3Ccircle cx='190' cy='190' r='1' fill='%23ffffff' fill-opacity='0.3'/%3E%3Cline x1='20' y1='20' x2='80' y2='40'/%3E%3Cline x1='80' y1='40' x2='140' y2='10'/%3E%3Cline x1='140' y1='10' x2='180' y2='60'/%3E%3Cline x1='180' y1='60' x2='160' y2='140'/%3E%3Cline x1='160' y1='140' x2='100' y2='100'/%3E%3Cline x1='100' y1='100' x2='60' y2='160'/%3E%3Cline x1='60' y1='160' x2='20' y2='100'/%3E%3Cline x1='20' y1='100' x2='20' y2='20'/%3E%3Cline x1='20' y1='100' x2='80' y2='40'/%3E%3Cline x1='20' y1='100' x2='100' y2='100'/%3E%3Cline x1='100' y1='100' x2='140' y2='10'/%3E%3Cline x1='100' y1='100' x2='180' y2='60'/%3E%3Cline x1='60' y1='160' x2='10' y2='190'/%3E%3Cline x1='60' y1='160' x2='120' y2='190'/%3E%3Cline x1='160' y1='140' x2='190' y2='190'/%3E%3Cline x1='120' y1='190' x2='190' y2='190'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 400px 400px;
+  z-index: 0;
+  opacity: 0.6;
+  background-position: center center;
+  animation: pattern-move 20s linear infinite;
+}
+
+@keyframes pattern-move {
+  0% {
+    background-position: 0 0;
+  }
+  25% {
+    background-position: 100px -50px;
+  }
+  50% {
+    background-position: 200px 0;
+  }
+  75% {
+    background-position: 100px 50px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.left-column > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* Right Column - Dark Side */
+.right-column {
+  background-color: #1e1e1e;
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+  /* Remove the jagged clip-path */
+  clip-path: none;
+}
+
+/* Remove pattern extension from red to black side */
+.right-column::before {
+  display: none;
+}
+
+/* Card styling for dark theme */
+.right-column .card {
+  background-color: #2a2a2a;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5) !important;
+  transition: all 0.5s ease-in-out;
+  border: 1px solid #444;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Red accent line at top of card */
+.right-column .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #cc0000, #ff3333);
+}
+
+/* Subtle red glow on card */
+.right-column .card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top left, rgba(204, 0, 0, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.login-success {
+  animation: success-pulse 1s ease-in-out;
+}
+
+/* Feature items in left column */
+.feature-item {
+  transition: transform 0.3s ease;  
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+}
+
+.animate-feature {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+  animation-delay: 0.6s;
+}
+
+.animate-text {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.2s;
+}
+
+.animate-text-delay {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.4s;
+}
+
+.animate-error {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.animate-alert {
+  animation: slideInDown 0.5s forwards;
+}
+
+/* Style input groups for icons */
+.input-group-text {
+  background-color: #3a3a3a;
+  border: 1px solid #555;
+  border-right: none;
+  color: #ff3333; /* Brighter red icon color for better contrast */
+}
+
+.input-group .form-control {
+  border-left: none;
+  background-color: #3a3a3a;
+  color: #e0e0e0;
+  border: 1px solid #555;
+}
+
+.input-group .form-control::placeholder {
+  color: #999;
+}
+
+/* Improve focus styles for input fields */
+.form-control:focus {
+  border-color: rgba(204, 0, 0, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(204, 0, 0, 0.25);
+  background-color: #3a3a3a;
+  color: #e0e0e0;
+}
+
+/* Refine input group focus styles for a more subtle and elegant look */
+.input-group:focus-within .input-group-text,
+.input-group:focus-within .form-control {
+  border-color: rgba(204, 0, 0, 0.5);
+  box-shadow: 0 0 5px rgba(204, 0, 0, 0.25);
+}
+
+.input-group:focus-within .form-control {
+  position: relative;
+  z-index: 2; 
+}
+
+/* Password toggle button styling */
+.password-toggle {
+  cursor: pointer;
+  background-color: #3a3a3a;
+  border: 1px solid #555;
+  border-left: none;
+  color: #ff3333;
+  transition: all 0.2s ease;
+}
+
+.password-toggle:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: #3a3a3a;
+  border-color: rgba(204, 0, 0, 0.5);
+}
+
+.password-toggle:hover {
+  background-color: #4a4a4a;
+}
+
+.password-toggle i {
+  font-size: 1rem;
+}
+
+/* Sign In Button Styling */
+.sign-in-button {
+  background: linear-gradient(135deg, #cc0000, #990000);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(204, 0, 0, 0.3);
+}
+
+.sign-in-button:hover {
+  background: linear-gradient(135deg, #dd0000, #aa0000);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(204, 0, 0, 0.4);
+}
+
+.sign-in-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(204, 0, 0, 0.3);
+}
+
+/* Logo container styling */
+.logo-container {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container-mobile {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 3.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Animations */
+@keyframes pulse-bg {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes success-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(40, 167, 69, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-3px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(3px, 0, 0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Add media queries to adjust clip-path for smaller screens */
+@media (max-width: 991.98px) {
+  .left-column {
+    clip-path: none;
+    border-radius: 0;
+  }
+  
+  .right-column {
+    clip-path: none;
+    border-radius: 0;
+  }
+  
+  /* Fix logo positioning on mobile */
+  .logo-container-mobile {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+  }
+  
+  .logo-container-mobile img {
+    max-width: 75%; 
+    max-height: 75%;
+    object-fit: contain;
+  }
+  
+  /* Ensure the text is centered on mobile */
+  .text-center.mb-4.d-block.d-lg-none {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
