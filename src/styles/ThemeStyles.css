@@ -6,17 +6,17 @@
   --text-primary: #333333;
   --text-secondary: #555555;
   --border-color: #e6e6e6;
-  --input-bg: #ffffff;
+  --input-bg: #f7f7f7; /* Softer white for input backgrounds */
   --input-text: #212529;
   --input-border: #e6e6e6;
   --input-placeholder: rgba(0, 0, 0, 0.4);
-  --card-bg: #f8f9fa;
+  --card-bg: #f5f5f5; /* Softer white for card backgrounds */
   --card-border: #e6e6e6;
   --card-shadow: rgba(0, 0, 0, 0.1);
   --accent-color: #cc0000;
   --accent-hover: #990000;
   --accent-shadow: rgba(204, 0, 0, 0.15);
-  --input-group-bg: #f5f5f5;
+  --input-group-bg: #f0f0f0; /* Softer white for input group backgrounds */
 }
 
 /* Dark theme variables */
@@ -48,17 +48,17 @@
   --text-primary: #333333;
   --text-secondary: #555555;
   --border-color: #e6e6e6;
-  --input-bg: #ffffff;
+  --input-bg: #f7f7f7; /* Softer white for input backgrounds */
   --input-text: #212529;
   --input-border: #e6e6e6;
   --input-placeholder: rgba(0, 0, 0, 0.4);
-  --card-bg: #f8f9fa;
+  --card-bg: #f5f5f5; /* Softer white for card backgrounds */
   --card-border: #e6e6e6;
   --card-shadow: rgba(0, 0, 0, 0.1);
   --accent-color: #cc0000;
   --accent-hover: #990000;
   --accent-shadow: rgba(204, 0, 0, 0.15);
-  --input-group-bg: #f5f5f5;
+  --input-group-bg: #f0f0f0; /* Softer white for input group backgrounds */
 }
 
 /* Theme toggle button */

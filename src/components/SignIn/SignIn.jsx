@@ -40,6 +40,16 @@ function SignIn() {
     setShowPassword(!showPassword);
   };
 
+  // Use demo account
+  const useDemoAccount = () => {
+    setFormData({
+      username: 'demo',
+      password: 'demo12'
+    });
+    // Clear any errors
+    setErrors({});
+  };
+
   // Validate form
   const validateForm = () => {
     const newErrors = {};
@@ -73,16 +83,18 @@ function SignIn() {
     // Simulate API call
     try {
       await new Promise(resolve => setTimeout(resolve, 1500));
-      setLoginSuccess(true);
       
-      // Redirect or show success state
-      setTimeout(() => {
-        alert('Login successful! Redirecting to dashboard...');
-        // In a real app, you would redirect to dashboard or home page
-      }, 1000);
+      if (formData.username === 'demo' && formData.password === 'demo12') {
+        setLoginSuccess(true);
+        setTimeout(() => {
+          alert('Login successful! Redirecting to dashboard...');
+        }, 1000);
+      } else {
+        setErrors({ general: 'Invalid username or password. Try using the demo account.' });
+      }
     } catch (error) {
       console.error('Login error:', error);
-      setErrors({ general: 'Login failed. Please try again.' });
+      setErrors({ general: 'An unexpected error occurred. Please try again.' });
     } finally {
       setLoading(false);
     }
@@ -193,6 +205,18 @@ function SignIn() {
                   </span>
                 ) : 'Sign In'}
               </button>
+              
+              {/* Demo Account Button */}
+              <div className="text-center mb-3">
+                <button 
+                  type="button"
+                  className="btn btn-link text-decoration-none demo-account-link"
+                  onClick={useDemoAccount}
+                  disabled={loading}
+                >
+                  <i className="bi bi-person-badge me-1"></i> Use Demo Account
+                </button>
+              </div>
               </form>
             <div className="mt-4 pt-3 border-top text-center">
               <p className="text-white small mb-0">&copy; 2025 Bayanat. All rights reserved.</p>
