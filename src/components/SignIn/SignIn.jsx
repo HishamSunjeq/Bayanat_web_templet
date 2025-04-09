@@ -75,8 +75,6 @@ function SignIn() {
     
     if (!formData.password) {
       newErrors.password = 'Password is required';
-    } else if (formData.password.length < 6) {
-      newErrors.password = 'Password must be at least 6 characters';
     }
     
     setErrors(newErrors);
@@ -99,7 +97,7 @@ function SignIn() {
     try {
       await new Promise(resolve => setTimeout(resolve, 1500));
       
-      if (formData.username === 'demo' && formData.password === 'demo12') {
+      if (formData.username === '1' && formData.password === '1') {
         setLoginSuccess(true);
         
         login({ username: formData.username });
@@ -108,7 +106,7 @@ function SignIn() {
           navigate('/dashboard ');
         }, 1000);
       } else {
-        setErrors({ general: 'Invalid username or password. Try using the demo account.' });
+        setErrors({ general: 'Invalid username or password.' });
       }
     } catch (error) {
       console.error('Login error:', error);
@@ -152,9 +150,9 @@ function SignIn() {
         {/* Right Column - Sign In Form */}
         <div className="col-lg-6 d-flex align-items-center justify-content-center right-column p-4">
           <div className={`card p-4 p-md-5 shadow-lg ${loginSuccess ? 'login-success' : ''}`} style={{ width: '100%', maxWidth: '450px', borderRadius: '10px', border: 'none', position: 'relative' }}>
-            <div className="theme-toggle-wrapper">
+            {/* <div className="theme-toggle-wrapper">
               <ThemeToggle />
-            </div>
+            </div> */}
             <div className="text-center mb-4 d-block d-lg-none">
               <div className="logo-container-mobile mx-auto">
                 <img src={logo} alt="Company Logo" className="logo-image-mobile" />
@@ -228,7 +226,7 @@ function SignIn() {
               </button>
               
               {/* Demo Account Button */}
-              <div className="text-center mb-3">
+              {/* <div className="text-center mb-3">
                 <button 
                   type="button"
                   className="btn btn-link text-decoration-none demo-account-link"
@@ -237,7 +235,7 @@ function SignIn() {
                 >
                   <i className="bi bi-person-badge me-1"></i> Use Demo Account
                 </button>
-              </div>
+              </div> */}
               </form>
             <div className="mt-4 pt-3 border-top text-center">
               <p className="text-white small mb-0">&copy; 2025 Bayanat. All rights reserved.</p>

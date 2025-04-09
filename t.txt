@@ -2,3 +2,5 @@ npm install bootstrap
 npm i --save bootstrap @popperjs/core
 npm install bootstrap-icons
 npm install react-router-dom
+
+npm install --save chart.js react-chartjs-2
