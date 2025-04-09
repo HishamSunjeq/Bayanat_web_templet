@@ -1,6 +1,6 @@
 import { Route, Navigate } from "react-router-dom";
 import SignIn from "../components/SignIn/SignIn";
-import Dashbord from "../components/dashbord";
+import Dashboard from "../components/Dashboard/Dashboard";
 import ProtectedRoute from "../components/ProtectedRoute";
 import MainLayout from "../components/Layout/MainLayout";
 
@@ -21,7 +21,7 @@ const AppRoutes = [
     }
   >
     {/* Dashboard */}
-    <Route key="dashboard" path="/dashbord" element={<Dashbord />} />
+    <Route key="dashboard" path="/dashboard" element={<Dashboard />} />
     
     {/* Payment Creation routes */}
     <Route key="multiple-transaction" path="/payment-creation/multiple-transaction" element={<div>Multiple Transaction Page</div>} />
@@ -51,7 +51,7 @@ const AppRoutes = [
     <Route key="stages" path="/admin/stages" element={<div>Stages Page</div>} />
     <Route key="add-user" path="/admin/add-user" element={<div>Add User Page</div>} />
     <Route key="add-new-bank" path="/admin/add-new-bank" element={<div>Add new bank Page</div>} />
-    <Route key="add-new-transaction-type" path="/admin/add-new-transaction-type'" element={<div>Add new transaction type Page</div>} />
+    <Route key="add-new-transaction-type" path="/admin/add-new-transaction-type" element={<div>Add new transaction type Page</div>} />
     <Route key="batch-management" path="/admin/batch-management" element={<div>Batch management Page</div>} />
     <Route key="batches" path="/admin/batches" element={<div>BatchesPage</div>} />
     

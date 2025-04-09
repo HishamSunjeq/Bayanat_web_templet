@@ -32,7 +32,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
   const menuItems = [
     {
       title: 'Dashboard',
-      path: '/dashbord',
+      path: '/dashboard',
       icon: 'fas fa-tachometer-alt'
     },
     {
@@ -52,12 +52,12 @@ function Sidebar({ isOpen, toggleSidebar }) {
     {
       title: 'Management',
       path: '/management',
-      icon: 'fas fa-chart-line',
+      icon: 'fa-solid fa-list-check',
     },
     {
       title: 'Report',
       path: '/report',
-      icon: 'fas fa-users',
+      icon: 'fa-solid fa-flag',
       submenu: [
         { title: 'Account Report', path: '/report/account-Report' },
         { title: 'Statement Information', path: '/report/statement-information' }
@@ -66,7 +66,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
     {
       title: 'Admin',
       path: '/admin',
-      icon: 'fas fa-cog',
+      icon: 'fa-solid fa-user-tie',
       submenu: [
         { title: 'IBAN page', path: '/admin/iban-page' },
         { title: 'Validation page', path: '/admin/validation-page' },
@@ -86,7 +86,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
     {
       title: 'Configration',
       path: '/configration',
-      icon: 'fas fa-cog',
+      icon: 'fa-solid fa-cog',
     }
   ];
 

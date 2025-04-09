@@ -22,11 +22,10 @@ function SignIn() {
   // Redirect if already authenticated
   useEffect(() => {
     if (isAuthenticated) {
-      navigate('/dashbord');
+      navigate('/dashboard ');
     }
   }, [isAuthenticated, navigate]);
 
-  // Add animation effect when component mounts
   useEffect(() => {
     const container = document.querySelector('.sign-in-container');
     if (container) {
@@ -36,16 +35,6 @@ function SignIn() {
         container.classList.remove('fade-in');
       };
     }
-  }, []);
-
-  // Add no-scroll class to body when SignIn component mounts
-  useEffect(() => {
-    document.body.classList.add('no-scroll');
-    
-    // Cleanup function to remove the class when component unmounts
-    return () => {
-      document.body.classList.remove('no-scroll');
-    };
   }, []);
 
   const handleChange = (e) => {
@@ -116,7 +105,7 @@ function SignIn() {
         login({ username: formData.username });
         
         setTimeout(() => {
-          navigate('/dashbord');
+          navigate('/dashboard ');
         }, 1000);
       } else {
         setErrors({ general: 'Invalid username or password. Try using the demo account.' });
@@ -137,7 +126,7 @@ function SignIn() {
           <div className="text-center">
             {/* Logo with white background circle */}
             <div className="logo-container mb-4">
-              <img src={logo} alt="Company Logo" className="logo-image" />
+              <img src={logo} alt="Company Logo" className="logo-image-signin" />
             </div>
             <h2 className="text-white mb-3 animate-text">Welcome to Bayanat</h2>
             <p className="text-white-50 lead animate-text-delay">Your Professional Digital Transformation Platform</p>
@@ -162,8 +151,8 @@ function SignIn() {
 
         {/* Right Column - Sign In Form */}
         <div className="col-lg-6 d-flex align-items-center justify-content-center right-column p-4">
-          <div className={`card p-4 p-md-5 shadow-lg ${loginSuccess ? 'login-success' : ''}`} style={{ width: '100%', maxWidth: '450px', borderRadius: '10px', border: 'none' }}>
-          <div className="theme-toggle-wrapper">
+          <div className={`card p-4 p-md-5 shadow-lg ${loginSuccess ? 'login-success' : ''}`} style={{ width: '100%', maxWidth: '450px', borderRadius: '10px', border: 'none', position: 'relative' }}>
+            <div className="theme-toggle-wrapper">
               <ThemeToggle />
             </div>
             <div className="text-center mb-4 d-block d-lg-none">

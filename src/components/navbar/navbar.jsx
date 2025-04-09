@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import './Navbar.css';
 import ThemeToggle from '../../themes/components/ThemeToggle';
@@ -23,7 +23,9 @@ function Navbar({ isSidebarOpen, toggleSidebar }) {
             <i className={`fas ${isSidebarOpen ? 'fa-times' : 'fa-bars'}`}></i>
           </button>
           <div className="logo">
+            <Link to="/dashboard">
             <img src={logo} alt="Company Logo" className="logo-image" />
+            </Link>
           </div>
           <h3>Bayanat</h3>
         </div>
@@ -39,7 +41,7 @@ function Navbar({ isSidebarOpen, toggleSidebar }) {
             <button className="logout-btn" onClick={handleLogout}>
               <i className="fas fa-sign-out-alt"></i> Logout
             </button>
-            <div className="theme-toggle-wrapper">
+            <div className="theme-toggle">
               <ThemeToggle />
             </div>
           </div>

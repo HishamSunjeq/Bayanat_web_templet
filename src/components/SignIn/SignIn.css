@@ -14,10 +14,19 @@ html, body, #root, .App {
   overflow: hidden;
 }
 
+/* Theme toggle wrapper styles */
+.theme-toggle-wrapper {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 1000;
+}
+
 /* Sign-in container with theme-dependent background */
 .sign-in-container {
   background-color: var(--bg-primary);
   transition: background-color 0.3s ease;
+  position: relative;
 }
 
 /* Small screen styles */
@@ -82,12 +91,6 @@ html, body, #root, .App {
     margin: 1.5rem auto;
     width: 100px;
     height: 100px;
-  }
-
-  .logo-image {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
   }
 
   .sign-in-button {
@@ -420,7 +423,7 @@ input[type="password"] {
   box-shadow: 0 4px 8px var(--card-shadow);
 }
 
-.logo-image {
+.logo-image-signin {
   max-width: 90%;
   max-height: 100%;
   object-fit: contain;

@@ -1,23 +1,23 @@
 /* Theme Variables */
 :root {
   font-size: 120%;
-  /* Light theme variables (default) */
   --bg-primary: #f0f2f5;
   --bg-secondary: #f8f9fa;
   --text-primary: #333333;
   --text-secondary: #555555;
   --border-color: #e6e6e6;
-  --input-bg: #f7f7f7; /* Softer white for input backgrounds */
+  --input-bg: #f7f7f7;
   --input-text: #212529;
   --input-border: #e6e6e6;
   --input-placeholder: rgba(0, 0, 0, 0.4);
-  --card-bg: #f5f5f5; /* Softer white for card backgrounds */
+  --card-bg: #f5f5f5;
   --card-border: #e6e6e6;
   --card-shadow: rgba(0, 0, 0, 0.1);
   --accent-color: #cc0000;
   --accent-hover: #990000;
   --accent-shadow: rgba(204, 0, 0, 0.15);
-  --input-group-bg: #f0f0f0; /* Softer white for input group backgrounds */
+  --input-group-bg: #f0f0f0;
+  --border-color: rgba(80, 28, 28, 0.4);
 }
 
 /* Dark theme variables */
@@ -38,8 +38,7 @@
   --accent-hover: #990000;
   --accent-shadow: rgba(204, 0, 0, 0.25);
   --input-group-bg: #3a3a3a;
-  /* Note: Form icons use accent-color for visibility in dark mode */
-  /* Input group backgrounds are overridden in SignIn.css for dark theme */
+  --border-color: rgba(255, 255, 255, 0.5);
 }
 
 /* Light theme class (for explicit setting) */
@@ -49,17 +48,18 @@
   --text-primary: #333333;
   --text-secondary: #555555;
   --border-color: #e6e6e6;
-  --input-bg: #f7f7f7; /* Softer white for input backgrounds */
+  --input-bg: #f7f7f7;
   --input-text: #212529;
   --input-border: #e6e6e6;
   --input-placeholder: rgba(0, 0, 0, 0.4);
-  --card-bg: #f5f5f5; /* Softer white for card backgrounds */
+  --card-bg: #f5f5f5;
   --card-border: #e6e6e6;
   --card-shadow: rgba(0, 0, 0, 0.1);
   --accent-color: #cc0000;
   --accent-hover: #990000;
   --accent-shadow: rgba(204, 0, 0, 0.15);
-  --input-group-bg: #f0f0f0; /* Softer white for input group backgrounds */
+  --input-group-bg: #f0f0f0;
+  --border-color: rgba(0, 0, 0, 0.4);
 }
 
 .theme-toggle:hover {
