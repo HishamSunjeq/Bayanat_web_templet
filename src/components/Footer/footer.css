@@ -1,0 +1,11 @@
+.footer {
+  background: linear-gradient(90deg, var(--accent-hover), var(--accent-hover));
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  height: 2rem;
+}
+
+.footer-text {
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+}

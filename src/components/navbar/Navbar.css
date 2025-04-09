@@ -64,10 +64,12 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-left h3 {
+.navbar-title {
   margin: 0;
   font-size: 1.25rem;
+  font-weight: 600;
   color: var(--text-primary);
+  letter-spacing: 0.5px;
 }
 
 /* Right side styles */
@@ -110,7 +112,7 @@
 /* Media query for small screens */
 @media (max-width: 991.98px) {
   .navbar-row {
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
@@ -135,11 +137,6 @@
   .logo-image {
     height: 32px;
   }
-
-  .navbar-left h3 {
-    font-size: 1.1rem;
-  }
-
   .navbar-welcome h2 {
     font-size: 1rem;
   }

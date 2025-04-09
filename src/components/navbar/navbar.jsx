@@ -1,9 +1,9 @@
-import React from 'react';
-import { useNavigate,Link } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
-import './Navbar.css';
-import ThemeToggle from '../../themes/components/ThemeToggle';
-import logo from '../../assets/Bayanat_logo.jpg';
+import React from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import "./Navbar.css";
+import ThemeToggle from "../../themes/components/ThemeToggle";
+import logo from "../../assets/Bayanat_logo.jpg";
 
 function Navbar({ isSidebarOpen, toggleSidebar }) {
   const { currentUser, logout } = useAuth();
@@ -11,7 +11,7 @@ function Navbar({ isSidebarOpen, toggleSidebar }) {
 
   const handleLogout = () => {
     logout();
-    navigate('/sign-in');
+    navigate("/sign-in");
   };
 
   return (
@@ -20,21 +20,26 @@ function Navbar({ isSidebarOpen, toggleSidebar }) {
         {/* Left Column */}
         <div className="navbar-col navbar-left">
           <button className="sidebar-toggle" onClick={toggleSidebar}>
-            <i className={`fas ${isSidebarOpen ? 'fa-times' : 'fa-bars'}`}></i>
+            <i className={`fas ${isSidebarOpen ? "fa-times" : "fa-bars"}`}></i>
           </button>
           <div className="logo">
             <Link to="/dashboard">
-            <img src={logo} alt="Company Logo" className="logo-image" />
+              <img src={logo} alt="Company Logo" className="logo-image" />
             </Link>
           </div>
-          <h3>Bayanat</h3>
+          <h3 className="navbar-title">
+            <span className="title-highlight">Bayanat</span>
+          </h3>
         </div>
 
         {/* Right Column */}
         <div className="navbar-col navbar-right">
           <div className="navbar-welcome">
             <h2>
-              Welcome, <span className="user-name">{currentUser?.username || 'User'}</span>
+              Welcome,{" "}
+              <span className="user-name">
+                {currentUser?.username || "User"}
+              </span>
             </h2>
           </div>
           <div className="navbar-actions">

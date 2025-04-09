@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
-import Navbar from '../Navbar/Navbar';
-import Sidebar from '../Sidebar/Sidebar';
-import './MainLayout.css';
+import React, { useState, useEffect } from "react";
+import { Outlet } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
+import Sidebar from "../Sidebar/Sidebar";
+import Footer from "../Footer/footer";
+import "./MainLayout.css";
 
 function MainLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
@@ -10,7 +11,7 @@ function MainLayout() {
   });
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(prev => !prev);
+    setIsSidebarOpen((prev) => !prev);
   };
 
   useEffect(() => {
@@ -21,13 +22,13 @@ function MainLayout() {
         timeoutId = setTimeout(fn, delay);
       };
     };
-  
+
     const handleResize = debounce(() => {
       setIsSidebarOpen(window.innerWidth > 991.98);
     }, 200);
-  
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -39,6 +40,7 @@ function MainLayout() {
           <Outlet />
         </main>
       </div>
+      <Footer />
     </div>
   );
 }
