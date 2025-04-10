@@ -1,37 +1,93 @@
 .navbar {
   background-color: var(--bg-secondary);
   border-bottom: 1px solid var(--border-color);
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-.navbar-container {
+.navbar-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
-.navbar-welcome h2 {
+.navbar-col {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Left column */
+.navbar-left {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Right column */
+.navbar-right {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.25rem;
+  margin-right: 0.5rem;
+}
+
+/* Logo and title */
+.logo-image {
+  height: 40px;
+  width: auto;
+  padding: 5px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-title {
   margin: 0;
   font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+/* Right side styles */
+.navbar-welcome h2 {
+  margin: 0;
+  font-size: 1.1rem;
   color: var(--text-primary);
   font-weight: 500;
 }
 
 .user-name {
   color: var(--accent-color);
-  font-weight: 600;
 }
 
 .navbar-actions {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
 }
 
 .logout-btn {
@@ -39,8 +95,8 @@
   color: white;
   border: none;
   border-radius: 4px;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
   display: flex;
@@ -53,18 +109,44 @@
   transform: translateY(-2px);
 }
 
-.logout-btn i {
-  font-size: 1rem;
-}
+/* Media query for small screens */
+@media (max-width: 991.98px) {
+  .navbar-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-@media (max-width: 768px) {
-  .navbar-container {
-    flex-direction: column;
+  .navbar-left {
+    flex: 0 1 auto;
+    min-width: unset;
+  }
+
+  .navbar-right {
+    flex: 0 1 auto;
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .navbar-left {
     gap: 0.5rem;
   }
-  
+
+  .logo-image {
+    height: 32px;
+  }
   .navbar-welcome h2 {
-    font-size: 1.1rem;
-    text-align: center;
+    font-size: 1rem;
+  }
+
+  .navbar-actions {
+    gap: 0.5rem;
+  }
+
+  .logout-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
   }
 }

@@ -1,22 +1,23 @@
 /* Theme Variables */
 :root {
-  /* Light theme variables (default) */
-  --bg-primary: #f0f2f5;
+  /* font-size: 120%; */
+  /*   --bg-primary: #f0f2f5;
   --bg-secondary: #f8f9fa;
   --text-primary: #333333;
   --text-secondary: #555555;
   --border-color: #e6e6e6;
-  --input-bg: #f7f7f7; /* Softer white for input backgrounds */
+  --input-bg: #f7f7f7;
   --input-text: #212529;
   --input-border: #e6e6e6;
   --input-placeholder: rgba(0, 0, 0, 0.4);
-  --card-bg: #f5f5f5; /* Softer white for card backgrounds */
+  --card-bg: #f5f5f5;
   --card-border: #e6e6e6;
   --card-shadow: rgba(0, 0, 0, 0.1);
   --accent-color: #cc0000;
-  --accent-hover: #990000;
+  --accent-hover: #060101;
   --accent-shadow: rgba(204, 0, 0, 0.15);
-  --input-group-bg: #f0f0f0; /* Softer white for input group backgrounds */
+  --input-group-bg: #f0f0f0;
+  --border-color: rgba(80, 28, 28, 0.4); */
 }
 
 /* Dark theme variables */
@@ -37,8 +38,7 @@
   --accent-hover: #990000;
   --accent-shadow: rgba(204, 0, 0, 0.25);
   --input-group-bg: #3a3a3a;
-  /* Note: Form icons use accent-color for visibility in dark mode */
-  /* Input group backgrounds are overridden in SignIn.css for dark theme */
+  --border-color: rgba(255, 255, 255, 0.5);
 }
 
 /* Light theme class (for explicit setting) */
@@ -48,36 +48,18 @@
   --text-primary: #333333;
   --text-secondary: #555555;
   --border-color: #e6e6e6;
-  --input-bg: #f7f7f7; /* Softer white for input backgrounds */
+  --input-bg: #f7f7f7;
   --input-text: #212529;
   --input-border: #e6e6e6;
   --input-placeholder: rgba(0, 0, 0, 0.4);
-  --card-bg: #f5f5f5; /* Softer white for card backgrounds */
+  --card-bg: #f5f5f5;
   --card-border: #e6e6e6;
   --card-shadow: rgba(0, 0, 0, 0.1);
-  --accent-color: #cc0000;
-  --accent-hover: #990000;
+  --accent-color: #a50000;
+  --accent-hover: #9e0202;
   --accent-shadow: rgba(204, 0, 0, 0.15);
-  --input-group-bg: #f0f0f0; /* Softer white for input group backgrounds */
-}
-
-/* Theme toggle button */
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 10px var(--card-shadow);
-  transition: all 0.3s ease;
+  --input-group-bg: #f0f0f0;
+  --border-color: rgba(0, 0, 0, 0.4);
 }
 
 .theme-toggle:hover {
@@ -91,14 +73,15 @@
 }
 
 /* Transition for smooth theme switching */
-body, 
-.card, 
-input, 
-button, 
+body,
+.card,
+input,
+button,
 .input-group-text,
 .left-column,
 .right-column {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 ::-webkit-scrollbar {
@@ -121,7 +104,8 @@ button,
   }
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   padding-right: 0;
 }
