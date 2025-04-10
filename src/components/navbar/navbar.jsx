@@ -28,7 +28,7 @@ function Navbar({ isSidebarOpen, toggleSidebar }) {
             </Link>
           </div>
           <h3 className="navbar-title">
-            <span className="title-highlight">Bayanat</span>
+            <span className="title-highlight">Payment Hub</span>
           </h3>
         </div>
 
