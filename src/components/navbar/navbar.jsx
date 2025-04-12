@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import "./Navbar.css";
-import ThemeToggle from "../../themes/components/ThemeToggle";
 import logo from "../../assets/Bayanat_logo.jpg";
 
 function Navbar({ isSidebarOpen, toggleSidebar }) {
@@ -46,9 +45,6 @@ function Navbar({ isSidebarOpen, toggleSidebar }) {
             <button className="logout-btn" onClick={handleLogout}>
               <i className="fas fa-sign-out-alt"></i> Logout
             </button>
-            <div className="theme-toggle">
-              <ThemeToggle />
-            </div>
           </div>
         </div>
       </div>

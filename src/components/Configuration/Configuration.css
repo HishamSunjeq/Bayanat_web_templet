@@ -1,0 +1,102 @@
+.configuration-container {
+  max-width: 1400px;
+}
+
+.theme-selector-card,
+.config-sidebar {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--card-shadow);
+  border: 1px solid var(--card-border);
+  background-color: var(--card-bg);
+  transition: all 0.3s ease;
+}
+
+.config-sidebar .card-header,
+.theme-selector-card .card-header {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--card-border);
+  color: var(--text-primary);
+}
+
+.config-nav {
+  width: 100%;
+}
+
+.config-nav-link {
+  color: var(--text-primary);
+  border-radius: 0 !important;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.config-nav-link:hover:not(.active) {
+  background-color: var(--bg-secondary);
+}
+
+.config-nav-link.active {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+.theme-select {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border-color: var(--input-border);
+}
+
+.theme-preview {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.theme-preview-box {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Form styling */
+.form-select, .form-control {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border-color: var(--input-border);
+}
+
+.form-select:focus, .form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.25rem rgba(204, 0, 0, 0.25);
+}
+
+.form-check-input:checked {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.form-check-input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.25rem rgba(204, 0, 0, 0.25);
+}
+
+.text-muted {
+  color: var(--text-secondary) !important;
+}
+
+/* Tab content styling */
+.tab-content {
+  min-height: 400px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .config-sidebar {
+    margin-bottom: 1.5rem;
+  }
+}

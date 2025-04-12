@@ -3,7 +3,6 @@ import "./SignIn.css";
 import logo from "../../assets/Bayanat_logo.jpg";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import ThemeToggle from "../../themes/components/ThemeToggle";
 
 function SignIn() {
   const navigate = useNavigate();
@@ -174,9 +173,6 @@ function SignIn() {
               position: "relative",
             }}
           >
-            {/* <div className="theme-toggle-wrapper">
-              <ThemeToggle />
-            </div> */}
             <div className="text-center mb-4 d-block d-lg-none">
               <div className="logo-container-mobile mx-auto">
                 <img

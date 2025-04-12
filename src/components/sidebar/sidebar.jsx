@@ -4,13 +4,9 @@ import "./Sidebar.css";
 
 function Sidebar({ isOpen, toggleSidebar }) {
   const location = useLocation();
-  const [expandedMenus, setExpandedMenus] = useState(
-    () => JSON.parse(localStorage.getItem("sidebarExpandedMenus")) || {}
-  );
+  const [expandedMenus, setExpandedMenus] = useState({});
 
   useEffect(() => {
-    localStorage.setItem("sidebarExpandedMenus", JSON.stringify(expandedMenus));
-
     const newExpanded = menuItems.reduce(
       (acc, item) => {
         if (

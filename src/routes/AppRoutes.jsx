@@ -3,6 +3,7 @@ import SignIn from "../components/SignIn/SignIn";
 import Dashboard from "../components/Dashboard/Dashboard";
 import ProtectedRoute from "../components/ProtectedRoute";
 import MainLayout from "../components/Layout/MainLayout";
+import Configuration from "../components/Configuration/Configuration";
 
 // All application routes defined in one place
 const AppRoutes = [
@@ -56,7 +57,7 @@ const AppRoutes = [
     <Route key="batches" path="/admin/batches" element={<div>BatchesPage</div>} />
     
     {/* Configuration */}
-    <Route key="configuration" path="/configration" element={<div>Configration Page</div>} />
+    <Route key="configuration" path="/configration" element={<Configuration />} />
   </Route>,
   
   // Catch-all route
